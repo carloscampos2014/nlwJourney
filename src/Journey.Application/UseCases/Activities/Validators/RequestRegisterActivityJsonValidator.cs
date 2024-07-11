@@ -3,7 +3,7 @@ using FluentValidation.Results;
 using Journey.Communication.Requests;
 using Journey.Exceptions;
 
-namespace Journey.Application.UseCases.Trips.Validators;
+namespace Journey.Application.UseCases.Activities.Validators;
 public class RequestRegisterActivityJsonValidator : AbstractValidator<RequestRegisterActivityJson>
 {
     public RequestRegisterActivityJsonValidator()
@@ -28,7 +28,7 @@ public class RequestRegisterActivityJsonValidator : AbstractValidator<RequestReg
             return new ValidationResult(new List<ValidationFailure> {
                 new ValidationFailure(
                     string.Format(ErrorMessages.RequestRegisterNullExeption, "Activity"),
-                    string.Format(ErrorMessages.RequestRegisterNullExeptionMessage), "atividade") });
+                    string.Format(ErrorMessages.RequestRegisterNullExeptionMessage, "atividade")) });
         }
 
         return base.Validate(context);

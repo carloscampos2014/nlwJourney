@@ -53,7 +53,7 @@ public class ActivityRepository : IActivityRepository
     {
         if (entity is null)
         {
-            throw new ValidationsException($"{ErrorMessages.RequestRegisterNullExeptionMessage}{Environment.NewLine}");
+            throw new ValidationsException($"{string.Format(ErrorMessages.RequestRegisterNullExeptionMessage, "atividade")}{Environment.NewLine}");
         }
 
         await _context.Activities.AddAsync(entity);
@@ -64,7 +64,7 @@ public class ActivityRepository : IActivityRepository
     {
         if (entity is null)
         {
-            throw new ValidationsException($"{ErrorMessages.RequestRegisterNullExeptionMessage}{Environment.NewLine}");
+            throw new ValidationsException($"{string.Format(ErrorMessages.RequestRegisterNullExeptionMessage, "atividade")}{Environment.NewLine}");
         }
 
         _context.Entry(entity).State = EntityState.Modified;

@@ -6,6 +6,7 @@ using Journey.Application.UseCases.Activities.GetAllByTrip;
 using Journey.Application.UseCases.Activities.GetById;
 using Journey.Application.UseCases.Activities.Register;
 using Journey.Application.UseCases.Activities.Update;
+using Journey.Application.UseCases.Activities.Validators;
 using Journey.Application.UseCases.Trips.Delete;
 using Journey.Application.UseCases.Trips.GetAll;
 using Journey.Application.UseCases.Trips.GetById;

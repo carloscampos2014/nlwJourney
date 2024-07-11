@@ -18,7 +18,7 @@ public class RequestRegisterTripJsonValidator : AbstractValidator<RequestRegiste
             .LessThanOrEqualTo(r => r.EndDate.Date).WithMessage(ErrorMessages.StartDateLessThanOrEqualToEndDate);
 
         RuleFor(r => r.EndDate.Date)
-            .Configure(c => c.PropertyName= "EndDate")
+            .Configure(c => c.PropertyName = "EndDate")
             .GreaterThan(DateTime.UtcNow.Date).WithMessage(ErrorMessages.EndDateGreaterThanNow)
             .GreaterThanOrEqualTo(r => r.StartDate.Date).WithMessage(ErrorMessages.EndDateLessThanOrEqualToStartDate);
     }
@@ -27,10 +27,10 @@ public class RequestRegisterTripJsonValidator : AbstractValidator<RequestRegiste
     {
         if (context is null || context.InstanceToValidate is null)
         {
-            return new ValidationResult(new List<ValidationFailure> { 
+            return new ValidationResult(new List<ValidationFailure> {
                 new ValidationFailure(
-                    string.Format(ErrorMessages.RequestRegisterNullExeption, "Trip"), 
-                    string.Format(ErrorMessages.RequestRegisterNullExeptionMessage), "viagem") });
+                    string.Format(ErrorMessages.RequestRegisterNullExeption, "Trip"),
+                    string.Format(ErrorMessages.RequestRegisterNullExeptionMessage, "viagem")) });
         }
 
         return base.Validate(context);

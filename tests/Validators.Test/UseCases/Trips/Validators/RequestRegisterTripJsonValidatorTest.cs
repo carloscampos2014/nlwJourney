@@ -18,7 +18,9 @@ public class RequestRegisterTripJsonValidatorTest
         //Arrange
         RequestRegisterTripJson request = null;
         var validator = new RequestRegisterTripJsonValidator();
-        var expected = new ValidationFailure(ErrorMessages.RequestRegisterNullExeption, ErrorMessages.RequestRegisterNullExeptionMessage);
+        var expected = new ValidationFailure(
+                    string.Format(ErrorMessages.RequestRegisterNullExeption, "Trip"),
+                    string.Format(ErrorMessages.RequestRegisterNullExeptionMessage, "viagem"));
 
         //Act
         var actual = validator.Validate(request);

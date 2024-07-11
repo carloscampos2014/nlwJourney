@@ -44,7 +44,7 @@ public class TripRepository : ITripRepository
     {
         if (entity is null)
         {
-            throw new ValidationsException($"{ErrorMessages.RequestRegisterNullExeptionMessage}{Environment.NewLine}");
+            throw new ValidationsException($"{string.Format(ErrorMessages.RequestRegisterNullExeptionMessage, "viagem")}{Environment.NewLine}");
         }
 
         await _context.Trips.AddAsync(entity);
@@ -55,7 +55,7 @@ public class TripRepository : ITripRepository
     {
         if (entity is null)
         {
-            throw new ValidationsException($"{ErrorMessages.RequestRegisterNullExeptionMessage}{Environment.NewLine}");
+            throw new ValidationsException($"{string.Format(ErrorMessages.RequestRegisterNullExeptionMessage, "viagem")}{Environment.NewLine}");
         }
 
         _context.Entry(entity).State = EntityState.Modified;
